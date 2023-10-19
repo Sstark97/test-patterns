@@ -1,4 +1,4 @@
-package org.example.test_specific_subclass;
+package org.example;
 
 public class Xray {
     private String direction = "center";
