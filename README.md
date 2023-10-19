@@ -1,10 +1,9 @@
-# Test Patterns
+# Test Patterns 🧪
 
-## Test-Specific Subclass
+## Test-Specific Subclass 👶🏻
 This pattern is used as a security mechanism. When we want to test a specific method, but we know that this method may 
 have calls to other methods that produce side effects, we create a specific subclass of the class to be tested 
 (Inheritance) and override the method that generates those unwanted changes.
-
 We could even turn this subclass into a spy and record that the undesired method has been called.
 
 Sometimes, this pattern is often used for convenience and performance rather than for security, such as to avoid 
@@ -19,7 +18,7 @@ Xray. So we create a subclass of Xray called SafeXray and override the `turnOn()
 [SafeXray](src/main/java/org/example/test_specific_subclass/SafeXray.java)<br>
 [SafeXrayTest](src/test/java/org/example/test_specific_subclass/XrayTest.java)
 
-## Self-Shunt
+## Self-Shunt  🧬
 It's a variation of the Test-Specific Subclass pattern, but in this case, it's the test class that overrides the 
 undesired behavior (the one that inherits from the class being tested).
 
@@ -32,7 +31,7 @@ The same example as the Test-Specific Subclass pattern, but in this case, we ove
 [Xray](src/main/java/org/example/Xray.java)<br>
 [XraySelfShuntTest](src/test/java/org/example/self_shunt/XraySelfShuntTest.java)<br>
 
-## Humble Object
+## Humble Object 😛
 It is used to separate the code that is difficult to test from the code that is easy to test. We delegate that code, 
 which is difficult to test, to another class that is so small that we don't need to test it. This is generally done with
 the boundary we interact with, code over which we have no control, such as functions/methods of a framework. It's not 
