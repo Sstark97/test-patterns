@@ -38,3 +38,14 @@ which is difficult to test, to another class that is so small that we don't need
 the boundary we interact with, code over which we have no control, such as functions/methods of a framework. It's not 
 even necessary for us to know what it does; we simply delegate it to another class and inject it into our class through 
 a constructor.
+
+### Example
+We have a class called `Calculator` that has a method called `calculateSquareRoot()` that calculates the square root of 
+a number.
+This method uses the `Math.sqrt()` method, which is a static method of the Math class. We want to test the `sqrt()`
+method, but we don't want to test the `Math.sqrt()` method. So we create a class called `MathHelper` that has a method
+called `sqrt()` that calls the `Math.sqrt()` method. We inject the `MathHelper` class into the `Calculator` class.
+
+[Calculator](src/main/java/org/example/humble_object/Calculator.java)<br>
+[MathHelper](src/main/java/org/example/humble_object/MathHelper.java)<br>
+[CalculatorTest](src/test/java/org/example/humble_object/CalculatorTest.java)<br>
