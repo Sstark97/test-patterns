@@ -31,3 +31,10 @@ The same example as the Test-Specific Subclass pattern, but in this case, we ove
 
 [Xray](src/main/java/org/example/Xray.java)<br>
 [XraySelfShuntTest](src/test/java/org/example/self_shunt/XraySelfShuntTest.java)<br>
+
+## Humble Object
+It is used to separate the code that is difficult to test from the code that is easy to test. We delegate that code, 
+which is difficult to test, to another class that is so small that we don't need to test it. This is generally done with
+the boundary we interact with, code over which we have no control, such as functions/methods of a framework. It's not 
+even necessary for us to know what it does; we simply delegate it to another class and inject it into our class through 
+a constructor.
